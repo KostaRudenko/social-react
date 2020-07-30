@@ -1,0 +1,19 @@
+.dialog {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.dialog a {
+    text-decoration: none;
+}
+
+.dialog.active {
+    color: gold;
+}
+
+.avatar {
+    width: 50px;
+    margin-right: 10px;
+    border-radius: 30px;
+}
