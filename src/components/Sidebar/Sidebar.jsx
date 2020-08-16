@@ -1,13 +1,13 @@
 import  React from 'react';
 import classes from './Sidebar.module.css';
 import Navbar from "../Navbar/Navbar";
-import Friends from "./Friends/Friends";
+import FriendsContainer from "./Friends/FriendsContainer";
 
-const Sidebar = (props) => {
+const Sidebar = () => {
     return (
         <div className='app-wrapper-sideBar'>
             <Navbar />
-            <Friends state={ props.state.friend } />
+            <FriendsContainer />
         </div>
     )
 };

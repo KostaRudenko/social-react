@@ -3,7 +3,7 @@ import classes from './Friends.module.css';
 import FriendsItem from "./FriendsItem/FriendsItem";
 
 const Friends = (props) => {
-    let sideBarFriendsElement = props.state
+    let sideBarFriendsElement = props.friend
         .map( friend => <FriendsItem name={ friend.name } id={ friend.id } avatar={ friend.avatar }/>);
     return (
         <div className={ classes.friendsWrapper }>

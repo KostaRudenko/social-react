@@ -10,19 +10,19 @@ import Settings from "./components/Settings/Settings";
 import Sidebar from "./components/Sidebar/Sidebar";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 
-const App = (props) => {
+const App = () => {
     return (
             <div className='app-wrapper'>
                 <Header />
-                <Sidebar state={ props.state.sideBar } />
+                <Sidebar />
 
                 <div className='app-wrapper-content'>
                     <Route
                         path='/dialogs'
-                        render={ ()=> <DialogsContainer store={ props.store }  /> }/>
+                        render={ ()=> <DialogsContainer /> }/>
                     <Route
                         path='/profile'
-                        render={ ()=> <Profile store={ props.store } /> } />
+                        render={ ()=> <Profile /> } />
                     <Route
                         path='/news'
                         render={ ()=> <News /> } />
