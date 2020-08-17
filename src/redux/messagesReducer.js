@@ -6,7 +6,7 @@ let initialState = {
         {
             id: 1,
             name: 'Kosta',
-            avatar: 'https://lh3.googleusercontent.com/proxy/YDJWjMtg9aOEsOn0US_IDszrUPNvSOpvz39BfSevTMkKpCZFVa3iI4tjz4SpUIXQZ1BKAYMWruZYHzbV0xqIC_7c4C1ds5_Zi50yXd-YfsT-iQ'
+            avatar: 'https://pixelbox.ru/wp-content/uploads/2018/02/anonymous_steam_avatars-1-1.jpg'
         },
         {
             id: 2,
@@ -38,17 +38,23 @@ let initialState = {
 
 const messagesReducer = ( state = initialState, action ) => {
     switch (action.type) {
-        case ADD_MESSAGE:
-            let newMessage = {
-                id: 1,
+        case ADD_MESSAGE: {
+            let newMess = {
+                id: 4,
                 message: state.newMessage
             };
-            state.messagesData.push(newMessage);
-            state.newMessage = '';
-            return state;
-        case UPDATE_NEW_MESSAGE_TEXT:
-            state.newMessage = action.newMessageText;
-            return state;
+            return {
+                ...state,
+                messagesData: [...state.messagesData, newMess],
+                newMessage: ''
+            };
+        }
+        case UPDATE_NEW_MESSAGE_TEXT: {
+            return  {
+                ...state,
+                newMessage: action.newMessageText
+            };
+        }
         default:
             return state;
     }

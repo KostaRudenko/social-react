@@ -4,7 +4,7 @@ import FriendsItem from "./FriendsItem/FriendsItem";
 
 const Friends = (props) => {
     let sideBarFriendsElement = props.friend
-        .map( friend => <FriendsItem name={ friend.name } id={ friend.id } avatar={ friend.avatar }/>);
+        .map( friend => <FriendsItem name={ friend.name } key={ friend.id } id={ friend.id } avatar={ friend.avatar }/>);
     return (
         <div className={ classes.friendsWrapper }>
             <p>Friends</p>

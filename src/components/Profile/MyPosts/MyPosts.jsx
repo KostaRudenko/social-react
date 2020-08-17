@@ -3,9 +3,8 @@ import classes from './MyPosts.module.css';
 import Post from "./Post/Post";
 
 const MyPosts = (props) => {
-    debugger;
     let postsElements = props.postsData
-        .map( post => <Post message={ post.message } likes={ post.likes } id={ post.id }/> );
+        .map( post => <Post message={ post.message } key={ post.id } likes={ post.likes } id={ post.id }/> );
 
     let onAddPost = () => {
         props.addPost();
@@ -19,15 +18,13 @@ const MyPosts = (props) => {
     return (
             <div className={ classes.postsWrapper }>
                 <h3>My Posts</h3>
-
                 <div>
                     <div>
                         <textarea
-                            onChange={ onPostChange }
                             value={ props.newPostTxt }
+                            onChange={ onPostChange }
                         />
                     </div>
-
                     <div>
                         <button onClick={ onAddPost }>add button</button>
                     </div>
