@@ -45,7 +45,10 @@ const messagesReducer = ( state = initialState, action ) => {
             };
             return {
                 ...state,
-                messagesData: [...state.messagesData, newMess],
+                messagesData: [
+                    ...state.messagesData,
+                    newMess
+                ],
                 newMessage: ''
             };
         }
